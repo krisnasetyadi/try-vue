@@ -2,7 +2,7 @@ export default {
     template: `
     <div class="flex gap-2">
     <button
-        @click="$emit('change',tag)"
+        @click="$emit('update:currentTag',tag)"
         v-for="tag in tags" 
         class="border rounded px-1 py-1 text-xs"
         :class="{
@@ -14,7 +14,10 @@ export default {
     `,
     props: {
         initialTags: Array,
-        currentTag: String,
+        // currentTag: String,
+        currentTag: String
+        // modelValue
+        // default prop name when using v model on a custom component
     },
     // data(){
     //     return {
